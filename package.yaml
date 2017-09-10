@@ -11,20 +11,29 @@ extra-source-files:
 library:
   source-dirs: src
   exposed-modules:
-  - Lib
+  - Data.Graph.Inductive.TotalOrder
+  - Data.Graph.Inductive.Set
+  - Data.Graph.Inductive.Event
+  - Data.Stage
   dependencies:
   - base >=4.7 && <5
-# executables:
-#   coexistence-exe:
-#     main: Main.hs
-#     source-dirs: app
-#     ghc-options:
-#     - -threaded
-#     - -rtsopts
-#     - -with-rtsopts=-N
-#     dependencies:
-#     - base
-#     - coexistence
+  - containers
+  - fgl
+  - set-monad
+executables:
+  coexistence-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - coexistence
+    - containers
+    - fgl
+    - set-monad
 # tests:
 #   coexistence-test:
 #     main: Spec.hs
